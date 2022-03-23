@@ -60,10 +60,6 @@ export default function Person({
           })}
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <p>Made with ❤</p>
-      </footer>
     </div>
   );
 }

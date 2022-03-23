@@ -25,9 +25,11 @@ function Nav() {
           ''
         )}
       </ul>
-      <button onClick={() => signIn()}>Sign In</button>
-      <br />
-      <button onClick={() => signOut()}>Sign Out</button>
+      {session ? (
+        <button onClick={() => signOut()}>Sign Out</button>
+      ) : (
+        <button onClick={() => signIn()}>Sign In</button>
+      )}
     </div>
   );
 }
