@@ -1,9 +1,29 @@
+import * as Yup from 'yup';
+
+import { Field, Form, Formik } from 'formik';
+
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import React from 'react';
 import styles from '../styles/Home.module.css';
 
 function Contact() {
+  const SignupSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(3, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    lastName: Yup.string()
+      .min(4, 'Too Short!')
+      .max(50, 'Too Long!')
+      .required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    subject: Yup.string().required('Required'),
+    message: Yup.string()
+      .min(10, 'must be 10 chars or longer')
+      .max(150, 'This is too long'),
+  });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +35,55 @@ function Contact() {
         <Nav />
       </div>
       Contact
+      <Formik
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+          message: 'Write..',
+        }}
+        validationSchema={SignupSchema}
+        onSubmit={(values) => {
+          // same shape as initial values
+          console.log(values);
+        }}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <p className='mb-0'>Name:</p>
+            <Field className='disBlock' name='firstName' />
+            {errors.firstName && touched.firstName ? (
+              <div>{errors.firstName}</div>
+            ) : null}
+            <p className='mb-0'>Last Name:</p>
+            <Field className='disBlock' name='lastName' />
+            {errors.lastName && touched.lastName ? (
+              <div>{errors.lastName}</div>
+            ) : null}
+            <p className='mb-0'>Email:</p>
+            <Field className='disBlock' name='email' type='email' />
+            {errors.email && touched.email ? <div>{errors.email}</div> : null}
+            <p className='mb-0'>Subject:</p>
+            <Field className='disBlock' name='subject' as='select'>
+              <option value=''></option>
+              <option value='knut'>Knut</option>
+              <option value='geir'>Geir</option>
+              <option value='olav'>Olav</option>
+              <option value='borge'>Børge</option>
+            </Field>
+            {errors.subject || touched.subject ? (
+              <div>{errors.subject}</div>
+            ) : null}
+            <p className='mb-0'>Message:</p>
+            <Field className='disBlock' name='message' as='textarea'></Field>
+            {errors.message && touched.message ? (
+              <div>{errors.message}</div>
+            ) : null}
+
+            <button type='submit'>Submit</button>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 }

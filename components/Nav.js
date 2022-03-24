@@ -17,6 +17,9 @@ function Nav() {
         <li>
           <Link href='/Login'>Login</Link>
         </li>
+        <li>
+          <Link href='/Contact'>Contact</Link>
+        </li>
         {session ? (
           <li>
             <Link href='/Admin'>Admin</Link>
