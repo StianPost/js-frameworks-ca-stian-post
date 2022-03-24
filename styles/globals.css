@@ -18,3 +18,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.disBlock {
+  display: block;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+button {
+  margin-top: 8px;
+}

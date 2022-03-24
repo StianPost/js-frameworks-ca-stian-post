@@ -80,7 +80,9 @@ function Contact() {
               <div>{errors.message}</div>
             ) : null}
 
-            <button type='submit'>Submit</button>
+            <button className='disBlock' type='submit'>
+              Submit
+            </button>
           </Form>
         )}
       </Formik>
