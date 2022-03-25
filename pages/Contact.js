@@ -42,7 +42,7 @@ function Contact() {
             firstName: '',
             lastName: '',
             email: '',
-            message: 'Write..',
+            message: '',
           }}
           validationSchema={SignupSchema}
           onSubmit={(values) => {
@@ -95,13 +95,14 @@ function Contact() {
                 className='block border border-solid border-black bg-slate-300 rounded-sm p-1 w-64'
                 name='message'
                 as='textarea'
+                placeholder='Write something here'
               ></Field>
               {errors.message && touched.message ? (
                 <div>{errors.message}</div>
               ) : null}
 
               <button
-                className='block border border-solid border-black bg-green-600 p-2 rounded-sm'
+                className='block border border-solid border-black bg-green-600 p-2 rounded-sm text-white'
                 type='submit'
               >
                 Submit

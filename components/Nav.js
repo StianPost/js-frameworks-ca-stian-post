@@ -15,9 +15,6 @@ function Nav() {
           <Link href='/Detail'>Detail</Link>
         </li>
         <li>
-          <Link href='/Login'>Login</Link>
-        </li>
-        <li>
           <Link href='/Contact'>Contact</Link>
         </li>
         {session ? (
@@ -30,14 +27,14 @@ function Nav() {
       </ul>
       {session ? (
         <button
-          className='border border-solid border-black p-2 rounded-sm bg-purple-500'
+          className='border border-solid border-black p-2 rounded-sm bg-purple-500 text-white'
           onClick={() => signOut()}
         >
           Sign Out
         </button>
       ) : (
         <button
-          className='border border-solid border-black p-2 rounded-sm bg-green-500'
+          className='border border-solid border-black p-2 rounded-sm bg-green-500 text-white'
           onClick={() => signIn()}
         >
           Sign In
