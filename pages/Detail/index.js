@@ -34,7 +34,7 @@ export default function Person() {
       </main>
 
       <footer className={styles.footer}>
-        <p>Made with ❤</p>
+        <p>Made with hate and suffering</p>
       </footer>
     </div>
   );

@@ -17,7 +17,6 @@ export default function Person({
   balance,
   picture,
 }) {
-  console.log(peopleJson);
   const router = useRouter();
   const handleOnClick = (guid) => {
     router.push(`/Detail/${guid}`);
@@ -33,7 +32,6 @@ export default function Person({
       <main className={styles.main}>
         <Nav />
         <h1 className={styles.title}>{name}</h1>
-        <img src={picture} alt='image off someone' />
         <div>
           <h2>About</h2>
           <p>{about}</p>

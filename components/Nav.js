@@ -29,9 +29,19 @@ function Nav() {
         )}
       </ul>
       {session ? (
-        <button onClick={() => signOut()}>Sign Out</button>
+        <button
+          className='border border-solid border-black p-2 rounded-sm bg-purple-500'
+          onClick={() => signOut()}
+        >
+          Sign Out
+        </button>
       ) : (
-        <button onClick={() => signIn()}>Sign In</button>
+        <button
+          className='border border-solid border-black p-2 rounded-sm bg-green-500'
+          onClick={() => signIn()}
+        >
+          Sign In
+        </button>
       )}
     </div>
   );
