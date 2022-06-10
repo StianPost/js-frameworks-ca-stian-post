@@ -10,7 +10,9 @@ You can use either a REST or GraphQL API for the API calls.
 
 ---
 
-## Level 1
+# JS Frameworks CA
+
+## Description
 
 Your app should have the following paths:
 
@@ -67,10 +69,42 @@ If the login is unsuccessful display a message above the form.
 
 This page will simply display an "Admin" heading.
 
----
 
-## Level 2
+## Built With
 
-Add a favourite button/icon component to each result on your home page. Clicking this button will toggle the result in/out of a favourites array.
+You can list a the tech stack that you've used over here
 
-Add a "/favourites" path to your routes. This page will display all the items currently in the favourites array.
+- Next JS
+- TailwindCSS
+- Next Auth
+
+## Getting Started
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com/StianPost/js-frameworks-ca-stian-post.git
+```
+
+2. Install the dependencies:
+
+```
+npm install
+```
+
+### Running
+
+Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
+
+To run the app, run the following commands:
+
+```bash
+npm run start
+```
+
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/stian-post-a211201b5/)
+
+[Portfolio](https://postfolio.netlify.app/)
